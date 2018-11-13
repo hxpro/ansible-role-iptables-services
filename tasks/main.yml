@@ -1,0 +1,9 @@
+---
+- name: Uninstall Firewalld
+  package: name=firewalld state=absent
+
+- name: Install iptables-services
+  package: name=iptables-services state=present
+
+- name: Enable/start iptables service
+  systemd: name=iptables state=started enabled=yes
